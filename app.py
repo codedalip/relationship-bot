@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Set your Gemini API key
-genai.configure(api_key="AIzaSyA9G5RzuVppi9-KqZMiW8ZustbASfVm34Q")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel(model_name="gemini-2.0-flash")
 
 @app.route("/")
