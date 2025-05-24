@@ -1,0 +1,75 @@
+body {
+    padding: 0;
+    padding-top: 35px;
+    margin: 0;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(255, 0, 170);
+   
+    background: linear-gradient(to right, #d776eb, #ac53fb);
+
+}
+
+#chat {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.message {
+    margin: 10px 0;
+}
+
+.user {
+    color: #1a73e8;
+}
+
+.bot {
+    color: rgb(255, 0, 170);
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    font-family: "Sour Gummy", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button {
+    padding: 10px 20px;
+    background: linear-gradient(to left, #f069ff, #fff);
+    border: 25%;
+    border-radius: 10%;
+    border-color: rgb(188, 5, 188);
+    border-left: #ac53fb;
+    color: rgb(236, 39, 46);
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);  /* semi-transparent */
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 14px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+}
+.tagline{
+    background: linear-gradient(to left, #fda2d2, #b424e8);
+    margin: 25px;
+    padding: 15px;
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    color: white;
+    text-align: center;
+}

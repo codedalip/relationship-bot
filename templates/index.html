@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Relationship Advice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Lacquer&family=Poetsen+One&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/style.css">
+  <link rel="icon" type="image/x-icon" href="static\heart-1988364_1920.png"
+</head>
+<body>
+  <div id="chat">
+    <h2>Relationship Advicer (AI)</h2>
+    <div id="messages"></div>
+    <input type="text" id="userInput" placeholder="Type your Relationship Question my dear..">
+    <button onclick="sendMessage()">Ask</button>
+  </div>
+  <div>
+    <p class="tagline">->Have you ever curious about your love?<-</p>
+    <p class="tagline">->Have you ever doubt about your love?<-</p>
+    <p class="tagline">->Have you ever get confused about your love?<-</p>
+    <p class="tagline">->Have you ever thought to ask questions about your love?<-</p>
+    <p class="tagline">->Have you ever want any relationship advisory?<-</p>
+  </div>
+  <footer class="footer">
+  <p>&copy; 2025 Relationship Advice AI. All rights reserved</p>
+  <p>Made BY Dalip(NIT DELHI) </p>
+</footer>
+
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("userInput");
+      const message = input.value;
+      input.value = "";
+
+      if (!message) return;
+
+      const messagesDiv = document.getElementById("messages");
+      messagesDiv.innerHTML += `<div class='message user'><strong>You:</strong> ${message}</div>`;
+
+      const response = await fetch("/get_advice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: message })
+      });
+
+      const data = await response.json();
+      messagesDiv.innerHTML += `<div class='message bot'><strong>Bot:</strong> ${data.reply}</div>`;
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+  </script>
+</body>
+</html>
